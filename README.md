@@ -12,7 +12,7 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 - `npx cdk deploy` deploy all stacks to your default AWS account/region
 - `npx cdk destroy` destroy all the stacks
 
-## steps
+## Steps
 
 - set up your AWS account and region in bin/multi_sp_ain_cloud_front.ts
 - building the project using above command

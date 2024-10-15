@@ -1,6 +1,6 @@
 # Welcome to the example CDK TypeScript project
 
-This is an example project showint how to contain multiple SPAs in one distribution.
+This is an example project showing how to contain multiple SPAs in one distribution.
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 

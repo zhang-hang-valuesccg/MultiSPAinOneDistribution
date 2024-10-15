@@ -1,14 +1,20 @@
-# Welcome to your CDK TypeScript project
+# Welcome to the example CDK TypeScript project
 
-This is a blank project for CDK development with TypeScript.
+This is an example project showint how to contain multiple SPAs in one distribution.
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
 ## Useful commands
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+- `npm run npmi-s` npm install in all folders
+- `npm run buildp` build SPAs
+- `npm run build` build CDK project
+- `npx cdk deploy` deploy all stacks to your default AWS account/region
+- `npx cdk destroy` destroy all the stacks
+
+## steps
+
+- set up your AWS account and region in bin/multi_sp_ain_cloud_front.ts
+- building the project using above command
+- check the cloudfront domain in management console
+- access to the default domain and /pageb/index.html

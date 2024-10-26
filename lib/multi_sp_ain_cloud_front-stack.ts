@@ -21,6 +21,7 @@ export class MultiSPAinCloudFrontStack extends cdk.Stack {
       removalPolicy: cdk.RemovalPolicy.DESTROY,
     });
 
+    // not used
     const bucketB = new Bucket(this, "bucket-pageb", {
       autoDeleteObjects: true,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
@@ -44,12 +45,12 @@ export class MultiSPAinCloudFrontStack extends cdk.Stack {
           },
         ],
       },
-      additionalBehaviors: {
-        "/pageb*": {
-          origin: S3BucketOrigin.withOriginAccessControl(bucketB),
-          cachePolicy: CachePolicy.CACHING_DISABLED, // turn off cache for verification
-        },
-      },
+      // additionalBehaviors: {
+      //   "/pageb*": {
+      //     origin: S3BucketOrigin.withOriginAccessControl(bucketB),
+      //     cachePolicy: CachePolicy.CACHING_DISABLED, // turn off cache for verification
+      //   },
+      // },
     });
 
     new BucketDeployment(this, "deploy-pagea", {
@@ -62,7 +63,8 @@ export class MultiSPAinCloudFrontStack extends cdk.Stack {
     new BucketDeployment(this, "deploy-pageb", {
       sources: [Source.asset("./pageB/dist")],
       destinationKeyPrefix: "pageb/",
-      destinationBucket: bucketB,
+      // destinationBucket: bucketB,
+      destinationBucket: bucketA,
       distribution: distribution,
       distributionPaths: ["/*"],
     });
